@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var tag:Label = $Label
 @onready var Dialogbox:Control = get_tree().get_first_node_in_group("DialogBox")
-var conv1:String = "Hi this is a test of how the text will appear on the screen apropriate test of the auto wrap function"
+var conv1:String = "Hello this is a test to the game that i am building the slow animation text is: "
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -26,6 +26,8 @@ func render_dialog_box() -> void:
 		Dialogbox.clear()
 		for x in conv1.split(" ",false):
 			await delay_text(x)
+		await Dialogbox.animation1(" Test ",0.1)
+		Dialogbox.animation1("1 2 3",0.2)
 		
 	tag.visible = true	
 	
