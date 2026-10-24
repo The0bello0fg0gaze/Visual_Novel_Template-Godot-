@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://gkytlmtojuph"]
 
 [ext_resource type="Script" uid="uid://ccnd8najvof1o" path="res://Game_Objects/Dialog/dialog_box.gd" id="1_o3r5w"]
+[ext_resource type="Texture2D" uid="uid://dkf6ut4lx4r6a" path="res://boy_assets/boy neutral.png" id="2_u0ur1"]
+[ext_resource type="Texture2D" uid="uid://dcs5h231fxp4m" path="res://old_man_assets/old man neutral.png" id="3_htne5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrkjr"]
 bg_color = Color(0.16188967, 0.16188872, 0.16376716, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_htne5"]
 
 [node name="Dialog_Box" type="Control" unique_id=1925949572 groups=["DialogBox"]]
 layout_mode = 3
@@ -37,3 +45,25 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "This is the text that will be shown to the players this is to fill the world with this test case."
 autowrap_mode = 2
+
+[node name="Left" type="StaticBody2D" parent="." unique_id=239179456]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left" unique_id=1762501145]
+position = Vector2(189, 386)
+shape = SubResource("RectangleShape2D_htne5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Left/CollisionShape2D" unique_id=577664238]
+position = Vector2(34, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_u0ur1")
+
+[node name="Right" type="StaticBody2D" parent="." unique_id=1224553501]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right" unique_id=120738914]
+position = Vector2(950, 443)
+shape = SubResource("RectangleShape2D_htne5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Right/CollisionShape2D" unique_id=131216991]
+position = Vector2(34, 12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_htne5")
